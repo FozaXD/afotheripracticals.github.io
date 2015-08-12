@@ -8,7 +8,7 @@
 </head>
 <body>
 	<div data-role="page" id="page1">
-		<div data-role="header">
+		<div data-role="header" data-position="standard">
 			<h1>My first page</h1>
 		</div>
 		<div data-role="main" class="ui-content">
@@ -16,6 +16,53 @@
 			<p>Welcome to my first page</p>
 			<p><a href="#page2">Page 2</a></p>
 			<p><a href="#page2" data-rel="dialog">Open page 2 as a dialog</a></p>
+			<p><a href="#page3">Page 3</a></p>
+			<p><a href="#page4">Page 4</a></p>
+			
+			
+			<h3>Buttons</h3>
+			<a href="#" data-role="button">Link-based button</a> 
+			<input type="submit" value="submit" data-inline="true"> 
+			<input type="reset" value="reset" data-inline="true">
+			
+			<h3>Control Group Buttons</h3> 
+			<div data-role="controlgroup">
+				<a href="#" data-role="button">Yes</a>
+				<a href="#" data-role="button">No</a>
+				<a href="#" data-role="button">Cancel</a>
+			</div>
+			<div data-role="controlgroup" data-type="horizontal">
+				<a href="#" data-role="button">Yes</a>
+				<a href="#" data-role="button">No</a>
+				<a href="#" data-role="button">Cancel</a>
+			</div>
+			
+			<h3>Checkboxes and Radio Buttons</h3>
+			<div data-role="fieldcontain"> 
+				<fieldset data-role="controlgroup">
+				<legend>Filter Restaurants By:</legend>
+				<input type="checkbox" name="checkbox-french" id="checkbox-french"> <label for="checkbox-french">French</label>
+				<input type="checkbox" name="checkbox-italian" id="checkbox-italian"> <label for="checkbox-italian">Italian</label>
+				<input type="checkbox" name="checkbox-greek" id="checkbox-greek"> <label for="checkbox-greek">Greek</label>
+				</fieldset>
+			</div>
+			<div data-role="fieldcontain">
+				<fieldset data-role="controlgroup" data-type="horizontal"> 
+				<legend>Select a Language:</legend>
+				<input type="radio" name="radio-language" id="radio-french"> <label for="radio-french">French</label>
+				<input type="radio" name="radio-language" id="radio-italian" checked="checked">
+				<label for="radio-italian">Italian</label>
+				<input type="radio" name="radio-language" id="radio-greek"> <label for="radio-greek">Greek</label>
+				</fieldset> 
+			</div>
+			
+			<div data-role="fieldcontain">
+				<label for="slider-music">Ambient Music</label>
+				<select name="slider-music" id="slider-music" data-role="slider">
+					<option value="on">On</option>
+					<option value="off">Off</option> 
+				</select>
+			</div>
 		</div>
 		<div data-role="footer">
 			<h2>&copy; Alex Fotheringham 2015</h2>
@@ -58,24 +105,43 @@
 				<li><a href="#">Item 3</a></li>
 			</ol>	
 			
-			<h3>List Split Button Example</h3>
-			<li>French 
-				<ul>
-					<li>
-						<a href="lecentral.html">Le Central</a>
-						<a href="reservations.php?restaurant=903">Make Reservations</a>
-					</li> 
-					<li>
-						<a href="bistrovandome.html">Bistro Vandome</a>
-						<a href="reservations.php?restaurant=904">Make Reservations</a> 
-					</li>
-					<li>
-						<a href="antoines.html">Antoine's</a>
-						<a href="reservations.php?restaurant=905">Make Reservations</a>
-					</li> 
-				</ul>
-			</li>
-
+			<h3>List Split Button & Thumbnail Example</h3>
+			<ul data-role="listview" data-split-icon="gear" data-split-theme="d" data-inset="true">
+				<li><a href="#">
+					<img src="../../_assets/img/album-bb.jpg">
+					<h2>Broken Bells</h2>
+					<p>Broken Bells</p></a>
+					<a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a>
+				</li>
+				<li><a href="#">
+					<img src="../../_assets/img/album-hc.jpg">
+					<h2>Warning</h2>
+					<p>Hot Chip</p></a>
+					<a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a>
+				</li>
+				<li><a href="#">
+					<img src="../../_assets/img/album-p.jpg">
+					<h2>Wolfgang Amadeus Phoenix</h2>
+					<p>Phoenix</p></a>
+					<a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a>
+				</li>
+			</ul>
+			<div data-role="popup" id="purchase" data-theme="d" data-overlay-theme="b" class="ui-content" style="max-width:340px; padding-bottom:2em;">
+				<h3>Purchase Album?</h3>
+				<p>Your download will begin immediately on your mobile device when you purchase.</p>
+				<a href="index.html" data-role="button" data-rel="back" data-theme="b" data-icon="check" data-inline="true" data-mini="true">Buy: $10.99</a>
+				<a href="index.html" data-role="button" data-rel="back" data-inline="true" data-mini="true">Cancel</a>
+			</div>		
+			
+			<h3>Count Bubbles</h3>
+			<ul data-role="listview" data-count-theme="c" data-inset="true">
+				<li><a href="#">Inbox <span class="ui-li-count">12</span></a></li>
+				<li><a href="#">Outbox <span class="ui-li-count">0</span></a></li>
+				<li><a href="#">Drafts <span class="ui-li-count">4</span></a></li>
+				<li><a href="#">Sent <span class="ui-li-count">328</span></a></li>
+				<li><a href="#">Trash <span class="ui-li-count">62</span></a></li>
+			</ul>
+			
 			<h3>Nested List Example</h3>
 			<ul data-role="listview">
 				<li>Restaurants 
@@ -106,12 +172,54 @@
 			</ul>
 			
 			<p><a href="#page1">Page 1</a></p>
+			<p><a href="#page3">Page 3</a></p>
+			<p><a href="#page3">Page 4</a></p>
 			<p><a href="external.html">Go to external page</a></p>
 		</div>
 		<div data-role="footer">
 			<h2>&copy; Alex Fotheringham 2015</h2>
 		</div>
 	</div>
+			
+	<section id="page3" data-role="page"> 
+		<header data-role="header">
+			<h1>Hello World - A navigation Page!</h1> 
+			<nav data-role="navbar">
+				<a href="#" class="ui-btn-active">First</a> 
+				<a href="#">Second</a>
+				<a href="#">Third</a>
+				<a href="#">Fourth</a>
+				<a href="#">Fifth</a> 
+			</nav>
+		</header>
+		<div class="content" data-role="content">
+			<h3>Content</h3> 
+		</div>
+		<footer data-role="footer">
+			<h3>Alex Fotheringham</h3> 
+		</footer>
+	</section>
+	
+	<section id="page4" data-role="page"> 
+		<header data-role="header">
+			<h1>Hello World - An organised navigation Page!</h1> 
+			<nav data-role="navbar">
+				<ul>
+					<li><a href="#" class="ui-btn-active">First</a></li> 
+					<li><a href="#">Second</a></li>
+					<li><a href="#">Third</a></li>
+					<li><a href="#">Fourth</a></li>
+					<li><a href="#">Fifth</a></li> 
+				</ul>
+			</nav>
+		</header>
+		<div class="content" data-role="content">
+			<h3>Content</h3> 
+		</div>
+		<footer data-role="footer">
+			<h3>Alex Fotheringham</h3> 
+		</footer>
+	</section>
 	
 </body>
 </html>
